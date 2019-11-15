@@ -1,6 +1,6 @@
 ########################################################################
 
-test cpld_fv3_mom6_cice_cold_atm_flux: fv3_mom6_cice.exe { 
+test cpld_fv3_mom6_cice_cold_atm_flux: fv3_mom6_cice_ww3.exe { 
     use plat 
     use plat%default_resources 
     use fv3_defaults 
@@ -22,10 +22,10 @@ test cpld_fv3_mom6_cice_cold_atm_flux: fv3_mom6_cice.exe {
          OZONE_data="@[FV3_input_data]/INPUT/global_o3prdlos.f77"
            CO2_data="@[FV3_input_data]/INPUT"
 
-    build=fv3_mom6_cice.exe 
+    build=fv3_mom6_cice_ww3.exe 
  
     prep=fv3cpld_prep( 
-    RUNDIR="@[RUNDIR]",modules="@[fv3_mom6_cice.exe%modules.nems]", 
+    RUNDIR="@[RUNDIR]",modules="@[fv3_mom6_cice_ww3.exe%modules.nems]", 
     CNTL="@[CNTL]") 
      
     # - set total number of tasks to satisfy coupled application need 
@@ -181,7 +181,7 @@ test cpld_fv3_mom6_cice_cold_atm_flux: fv3_mom6_cice.exe {
       # for comparison against the MD5 sum made in the build job.
       # This is to ensure the executable did not change during the
       # test suite.
-        "@[build%target]" .md5cmp. "@[fv3_mom6_cice.exe%md5sum]" 
+        "@[build%target]" .md5cmp. "@[fv3_mom6_cice_ww3.exe%md5sum]" 
     }
  
     spawn execute { 
