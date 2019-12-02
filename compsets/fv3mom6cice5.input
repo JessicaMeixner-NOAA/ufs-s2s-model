@@ -72,6 +72,7 @@ build fv3_mom6_cice.exe {
 cpl_defaults = {
     ATMRES=''
     OCNRES='025'
+    ICERES='0.25'
     INPUT_NML="input.mom6.nml.IN"
     FIELD_TABLE="field_table"
     NSOUT='-1'

@@ -77,13 +77,13 @@ test cpld_fv3_mom6_cice_2d_atm_flux: fv3_mom6_cice.exe {
 #MOM6 fixed input
                        'INPUT/*'  <=copyfrom= "@[UGCS_input_data]/MOM6_FIX/@[OCNRES]"          
 #CICE5 fixed input
-       'grid_cice_NEMS_mx025.nc'  <=copy=     "@[UGCS_input_data]/CICE_FIX/@[OCNRES]/grid_cice_NEMS_mx025.nc"
-       'kmtu_cice_NEMS_mx025.nc'  <=copy=     "@[UGCS_input_data]/CICE_FIX/@[OCNRES]/kmtu_cice_NEMS_mx025.nc"
+             'grid_cice_NEMS.nc'  <=copy=     "@[UGCS_input_data]/CICE_FIX/@[OCNRES]/grid_cice_NEMS_mx@[OCNRES].nc"
+             'kmtu_cice_NEMS.nc'  <=copy=     "@[UGCS_input_data]/CICE_FIX/@[OCNRES]/kmtu_cice_NEMS_mx@[OCNRES].nc"
 # ICs
             'INPUT/sfc_data*.nc'  <=copyfrom= "@[FV3_IC]"
             'INPUT/gfs_data*.nc'  <=copyfrom= "@[FV3_IC]"
                  'INPUT/MOM*.nc'  <=copyfrom= "@[MOM6_IC]"
-            'cice5_model.res.nc'  <=copy=     "@[CICE5_IC]/cice5_model_0.25.res_@[CDATE].nc"
+            'cice5_model.res.nc'  <=copy=     "@[CICE5_IC]/cice5_model_@[ICERES].res_@[CDATE].nc"
                 "@[RESTART_MED]"  <=copyfrom= "@[MED_restart_data]"
 # namelists,templates and configurations
                      'input.nml'  <=atparse=  "@[PARMnems]/@[INPUT_NML]"
