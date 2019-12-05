@@ -19,10 +19,10 @@ load 'fv3mom6cice5.input'
 #MED_restart_data in benchmark_warm.input. 
 
 load 'benchmark_cold.input'
-#load 'benchmark_warm.input'
+load 'benchmark_warm.input'
 
-run cpld_fv3_384_mom6_cice_cold_bmark @ benchmark, coldBM2
-#run cpld_fv3_384_mom6_cice_2d_bmark @ benchmark, warmBM2
+#run cpld_fv3_384_mom6_cice_cold_bmark @ benchmark, coldBM2
+run cpld_fv3_384_mom6_cice_2d_bmark @ benchmark, warmBM2
 
 ########################################################################
 #Run the Benchmark-like inputs for 4 standard dates

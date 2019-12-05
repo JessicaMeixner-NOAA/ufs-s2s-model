@@ -61,7 +61,6 @@ platform hera.intel {
         WRTTASK_PER_GROUP=12
     }
     default_cpl={
-        #TASKS=320
         TASKS=320
         TPN=40
         INPES=3
@@ -70,8 +69,6 @@ platform hera.intel {
         WRTTASK_PER_GROUP=8
         med_petlist_bounds="0 143"
         atm_petlist_bounds="0 151"
-        #ocn_petlist_bounds="150 271"
-        #ice_petlist_bounds="272 319"
         ocn_petlist_bounds="152 271"
         ice_petlist_bounds="272 319"
     }

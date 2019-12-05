@@ -2,8 +2,7 @@
 
 test cpld_fv3_384_mom6_cice_cold_bmark: fv3_mom6_cice.exe {
     use cpld_fv3_mom6_cice_cold_atm_flux
-    #use plat%default_cpl_benchmark
-    use plat%default_cpl
+    use plat%default_cpl_benchmark
 
     ATMRES='384'
     OCNRES='050'
@@ -37,7 +36,7 @@ test cpld_fv3_384_mom6_cice_cold_bmark: fv3_mom6_cice.exe {
     CDATE="@[SYEAR]@[SMONTH]@[SDAY]@[SHOUR]"
 
     # - set run type for CICE in ice_in
-    RUNID='cpcice'
+    #RUNID='cpcice'
 
     # - set initialization type for MOM6 
     MOM6_RESTART_SETTING = 'n'

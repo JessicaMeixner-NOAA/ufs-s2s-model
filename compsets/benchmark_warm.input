@@ -5,13 +5,15 @@ test cpld_fv3_384_mom6_cice_2d_bmark: fv3_mom6_cice.exe {
     use plat%default_cpl_benchmark
 
     ATMRES='384'
+    OCNRES='050'
+    ICERES='0.50'
     TEST_DESCR="Fully coupled FV3-MOM6-CICE system - cold 384"
  
     #For a 35 day run:
     #DAYS='35'
     #FHMAX='840'
     #walltime=28800   # seconds
-    walltime=1800   # seconds
+    #walltime=1800   # seconds
 
     DT_ATMOS='450'
     NPX='385'
@@ -49,21 +51,23 @@ test cpld_fv3_384_mom6_cice_2d_bmark: fv3_mom6_cice.exe {
     CDATE="@[SYEAR]@[SMONTH]@[SDAY]@[SHOUR]"
 
     # - set run type for CICE in ice_in
-    RUNID='cpcice'
+    #RUNID='cpcice'
 
     # - set initialization type for MOM6 
-    MOM6_RESTART_SETTING = 'r'
+    MOM6_RESTART_SETTING = 'n'
 
     # set locations of ICs
          BM_IC="/scratch1/NCEPDEV/nems/Bin.Li/S2S/FROM_HPSS/@[CDATE]"
         FV3_IC="@[BM_IC]/gfs/C384/INPUT"
-       MOM6_IC="@[BM_IC]/mom6_da"
-      CICE5_IC="@[BM_IC]/cpc"    
+     #  MOM6_IC="@[BM_IC]/mom6_da"
+     # CICE5_IC="@[BM_IC]/cpc"    
+       MOM6_IC="/scratch2/NCEPDEV/climate/Denise.Worthen/TTout/"
+      CICE5_IC="/scratch2/NCEPDEV/climate/Denise.Worthen/TTout/"
 
     # set location of cold start for mediator restarts
     # THIS IS A USER's OWN RUN and should reflect the full path to the location of the cold start
     # eg: "/scratch2/NCEPDEV/stmp1/First.LastName/rtgen.NUMBER/tmp/cpld_fv3_384_mom6_cice_cold_bmark"
-    MED_restart_data="full-path-to-user-coldstart"
+    MED_restart_data="/scratch1/NCEPDEV/stmp2/Denise.Worthen/S2S_hdeg2/@[CDATE]_cold/tmp/cpld_fv3_384_mom6_cice_cold_bmark"
     RESTART_MED="mediator_*"    
 
     # Specify output files:
