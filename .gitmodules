@@ -1,6 +1,6 @@
 [submodule "FV3"]
 	path = FV3
-	url = https://github.com/NOAA-EMC/fv3atm
+	url = https://github.com/JessicaMeixner-NOAA/fv3atm
 	branch = develop
 [submodule "NEMS"]
 	path = NEMS
@@ -16,7 +16,7 @@
         branch = GFS-FMS
 [submodule "stochastic_physics"]
 	path = stochastic_physics
-	url = https://github.com/noaa-psd/stochastic_physics
+	url = https://github.com/JessicaMeixner-NOAA/stochastic_physics
 [submodule "MOM6"]
 	path = MOM6
 	url = https://github.com/NOAA-EMC/MOM6-interface
