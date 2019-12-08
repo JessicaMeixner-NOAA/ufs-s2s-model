@@ -58,7 +58,7 @@ C_P = 3992.0                    !   [J kg-1 K-1] default = 3991.86795711963
                                 ! constant. This is only used if ENABLE_THERMODYNAMICS is
                                 ! true. The default value is from the TEOS-10 definition
                                 ! of conservative temperature.
-CHECK_BAD_SURFACE_VALS = True   !   [Boolean] default = False
+CHECK_BAD_SURFACE_VALS = False   !   [Boolean] default = False
                                 ! If true, check the surface state for ridiculous values.
 BAD_VAL_SSH_MAX = 50.0          !   [m] default = 20.0
                                 ! The value of SSH above which a bad value message is
@@ -77,7 +77,10 @@ WRITE_GEOM = 2                  ! default = 1
                                 ! If =1, write the geometry and vertical grid files only for
                                 ! a new simulation. If =2, always write the geometry and
                                 ! vertical grid files. Other values are invalid.
-
+SAVE_INITIAL_CONDS = True       !   [Boolean] default = False
+                                ! If true, write the initial conditions to a file given by IC_OUTPUT_FILE.
+IC_OUTPUT_FILE = "MOM_IC"       ! default = "MOM_IC"
+                                ! The file into which to write the initial conditions.
 ! === module MOM_domains ===
 TRIPOLAR_N = True               !   [Boolean] default = False
                                 ! Use tripolar connectivity at the northern edge of the
@@ -227,7 +230,7 @@ REGRID_ACCELERATE_INIT = True   !   [Boolean] default = False
                                 ! If true, runs REGRID_ACCELERATE_ITERATIONS iterations of the regridding
                                 ! algorithm to push the initial grid to be consistent with the initial
                                 ! condition. Useful only for state-based and iterative coordinates.
-REGRID_ACCELERATE_ITERATIONS = 1 ! default = 1
+REGRID_ACCELERATE_ITERATIONS = 10 ! default = 1
                                 ! The number of regridding iterations to perform to generate an initial grid
                                 ! that is consistent with the initial conditions.
 GRID_ROTATION_ANGLE_BUGS = False  ! [Boolean] default = True
