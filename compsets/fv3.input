@@ -201,7 +201,10 @@ fv3_defaults = {
     MAKE_NH='.T.'
     MOUNTAIN='.F.'
     SATMEDMF='.F.'
+    ISATMEDMF='0'
     HYBEDMF='.T.'
+    IMFSHALCNV='2'
+    IMFDEEPCNV='2'
     LHEATSTRG='.F.'
     LGFDLMPRAD='.F.'
     EFFR_IN='.F.'
@@ -2003,6 +2006,7 @@ test fv3_gfdlmprad_32bit_post: fv3_32bit.exe {
          'model_configure' <=atparse=  "@[PARMnems]/model_configure.IN"
                     'itag' <=atparse=  "@[PARMnems]/post_itag"
       'postxconfig-NT.txt' <=atparse=  "@[PARMnems]/postxconfig-NT.txt"
+      'postxconfig-NT_FH00.txt' <=atparse=  "@[PARMnems]/postxconfig-NT_FH00.txt"
     'params_grib2_tbl_new' <=atparse=  "@[PARMnems]/params_grib2_tbl_new"
                        'aerosol.dat' <=copyfrom= "@[FV3_input_data]/INPUT"
         'co2historicaldata_201*.txt' <=copyfrom= "@[FV3_input_data]/INPUT"
@@ -2030,7 +2034,9 @@ test fv3_gfdlmprad_32bit_post: fv3_32bit.exe {
         'phyf024.nemsio'         .bitcmp. "@[CNTL]"
         'dynf000.nemsio'         .bitcmp. "@[CNTL]"
         'dynf024.nemsio'         .bitcmp. "@[CNTL]"
+        'GFSFLX.GrbF00'          .bitcmp. "@[CNTL]"
         'GFSPRS.GrbF00'          .bitcmp. "@[CNTL]"
+        'GFSFLX.GrbF24'          .bitcmp. "@[CNTL]"
         'GFSPRS.GrbF24'          .bitcmp. "@[CNTL]"
         'RESTART/coupler.res'                   .bitcmp. "@[CNTL]/RESTART/"
         'RESTART/fv_core.res.nc'                .bitcmp. "@[CNTL]/RESTART/"
