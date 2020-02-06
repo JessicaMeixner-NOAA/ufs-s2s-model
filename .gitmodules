@@ -1,11 +1,9 @@
 [submodule "FV3"]
 	path = FV3
-	url = git@github.com:JessicaMeixner-NOAA/fv3atm.git
-        branch = feature/cplwav2atm 
+	url = https://github.com/SMoorthi-emc/fv3atm
 [submodule "NEMS"]
 	path = NEMS
 	url = git@github.com:JessicaMeixner-NOAA/NEMS.git
-	branch = feature/cplwav
 [submodule "CICE_SRC"]
 	path = CICE_SRC
 	url = https://github.com/NOAA-EMC/CICE5.git
