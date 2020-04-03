@@ -16,7 +16,9 @@
         branch = GFS-FMS
 [submodule "stochastic_physics"]
 	path = stochastic_physics
-	url = https://github.com/noaa-psd/stochastic_physics
+        url = https://github.com/lisa-bengtsson/stochastic_physics
+        branch = CA_develop
+	#url = https://github.com/noaa-psd/stochastic_physics
 [submodule "MOM6"]
 	path = MOM6
 	url = https://github.com/NOAA-EMC/MOM6-interface
