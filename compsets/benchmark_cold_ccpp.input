@@ -1,6 +1,6 @@
 ########################################################################
 
-test cpld_fv3_ccpp_384_mom6_cice_cold_bmark: fv3_ccpp_mom6_cice.exe {
+test cpld_fv3_ccpp_384_mom6_cice_cold_bmark: fv3_ccpp_mom6_cice_repro.exe {
     use cpld_fv3_ccpp_mom6_cice_cold_atm_flux
     use plat%default_cpl_benchmark
 
@@ -19,6 +19,13 @@ test cpld_fv3_ccpp_384_mom6_cice_cold_bmark: fv3_ccpp_mom6_cice.exe {
     FNABSC="'global_mxsnoalb.uariz.t766.1536.768.rg.grb',"
 
     FV3_mosaic="C@[ATMRES]"
+
+
+    build=fv3_ccpp_mom6_cice_repro.exe
+
+    prep=fv3cpld_prep(
+    RUNDIR="@[RUNDIR]",modules="@[fv3_ccpp_mom6_cice_repro.exe%modules.nems]",
+    CNTL="@[CNTL]")
 
     # inputs and fixed files for benchmark runs to match workflow
       INPUT_NML="input.benchmark_ccpp.nml.IN"
@@ -53,7 +60,7 @@ test cpld_fv3_ccpp_384_mom6_cice_cold_bmark: fv3_ccpp_mom6_cice.exe {
       # for comparison against the MD5 sum made in the build job.
       # This is to ensure the executable did not change during the
       # test suite.
-        "@[build%target]" .md5cmp. "@[fv3_ccpp_mom6_cice.exe%md5sum]" 
+        "@[build%target]" .md5cmp. "@[fv3_ccpp_mom6_cice_repro.exe%md5sum]" 
     }
 
     spawn execute { 
