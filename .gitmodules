@@ -1,7 +1,7 @@
 [submodule "FV3"]
 	path = FV3
-	url = https://github.com/binli2337/fv3atm
-	branch = wcoss2
+	url = git@github.com:JessicaMeixner-NOAA/fv3atm.git
+	branch = wcossphase2
 [submodule "NEMS"]
 	path = NEMS
 	url = https://github.com/NOAA-EMC/NEMS.git
@@ -13,14 +13,16 @@
 [submodule "FMS"]
 	path = FMS
 	url = https://github.com/NOAA-GFDL/FMS
-        branch = master
+	branch = master
 [submodule "stochastic_physics"]
 	path = stochastic_physics
 	url = https://github.com/noaa-psd/stochastic_physics
+	branch = master
 [submodule "MOM6"]
 	path = MOM6
-	url = https://github.com/NOAA-EMC/MOM6-interface
+	url = https://github.com/NOAA-EMC/MOM6-interface.git
+	branch = develop
 [submodule "WW3"]
 	path = WW3
-	url = https://github.com/binli2337/WW3.git
-        branch = wcoss2
+	url = https://github.com/NOAA-EMC/WW3.git
+	branch = develop
