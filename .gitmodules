@@ -1,6 +1,6 @@
 [submodule "FV3"]
 	path = FV3
-	url = git@github.com:JessicaMeixner-NOAA/fv3atm.git
+	url = https://github.com/JessicaMeixner-NOAA/fv3atm.git
 	branch = wcossphase2
 [submodule "NEMS"]
 	path = NEMS
