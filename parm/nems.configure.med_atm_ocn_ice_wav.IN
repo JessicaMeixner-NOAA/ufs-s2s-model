@@ -66,7 +66,6 @@ runSeq::
     MED MedPhase_prep_ocn
     MED -> OCN :remapMethod=redist
     OCN -> WAV 
-    WAV -> OCN :srcMaskValues=1
     OCN
     @@[coupling_interval_fast_sec]
       MED MedPhase_prep_ice
