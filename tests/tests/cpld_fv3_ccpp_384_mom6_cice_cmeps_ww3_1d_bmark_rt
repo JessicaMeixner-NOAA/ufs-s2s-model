@@ -98,9 +98,9 @@ export ocn_petlist_bounds=$OPB_cpl_wwav
 export ice_petlist_bounds=$IPB_cpl_wwav
 export wav_petlist_bounds=$WPB_cpl_wwav
 
-# no high freq fv3 output
-NFHMAX_HF='-1'
-NFHOUT_HF='-1'
+# add high frequency output
+NFHMAX_HF='12'
+NFHOUT_HF='1'
 
 # set component and coupling timesteps
 export DT_CICE=${DT_ATMOS}
