@@ -49,7 +49,7 @@ cp    @[RTPWD]/${CICE_IC}/cice5_model_0.25.*.nc ./cice5_model.res.nc
 #orion 
 #cp    /work/noaa/marine/jmeixner/tempFixICdir/IC/WW3ICcfsr/${SYEAR}${SMONTH}${SDAY}.000000.restart.gwes_30m ./restart.gwes_30m
 #hera 
-cp /scratch2/NCEPDEV/climate/climpara/S2S/IC/CFSR/${SYEAR}${SMONTH}${SDAY}${SHOUR}/wav/gwes_30m/${SYEAR}${SMONTH}${SDAY}.000000.restart.gwes_30m
+cp /scratch2/NCEPDEV/climate/climpara/S2S/IC/CFSR/${SYEAR}${SMONTH}${SDAY}${SHOUR}/wav/gwes_30m/${SYEAR}${SMONTH}${SDAY}.000000.restart.gwes_30m ./restart.gwes_30m
 
 # Restart from coldstart, NEMS or CMEPS
 if [[ ! $MED_restart_data == '' ]]; then
