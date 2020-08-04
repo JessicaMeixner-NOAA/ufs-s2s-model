@@ -117,8 +117,8 @@ export ocn_petlist_bounds=$OPB_cpl_bmrk
 export ice_petlist_bounds=$IPB_cpl_bmrk
 
 # no high freq fv3 output
-NFHMAX_HF='-1'
-NFHOUT_HF='-1'
+NFHMAX_HF='12'
+NFHOUT_HF='1'
 
 # set component and coupling timesteps
 export DT_CICE=${DT_ATMOS}
